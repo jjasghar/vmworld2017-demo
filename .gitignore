@@ -1,0 +1,39 @@
+.autotest
+coverage
+.DS_Store
+pkg/*
+*/tags
+*~
+
+# You should check in your Gemfile.lock in applications, and not in gems
+/Gemfile.local
+acceptance/.bundle
+
+# ignore some common Bundler 'binstubs' directory names
+# http://gembundler.com/man/bundle-exec.1.html
+b/
+binstubs/
+vendor/
+
+# RVM and RBENV ruby version files
+.rbenv-version
+.rvmrc
+.ruby-version
+
+# Documentation
+_site/*
+.yardoc/
+doc/
+
+# Vagrant
+Vagrantfile
+.vagrant/
+
+# Test Kitchen
+.kitchen/
+
+# Chef-Acceptance
+.acceptance_logs
+
+.envrc
+.direnv
