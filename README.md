@@ -18,25 +18,22 @@ the **create**, **list**, **bootstrap**, and **destroy**.
 
 The bash commands for spinning up a VM in your local SDDC.
 ```bash
-SDDC=local bundle exec knife vcenter vm clone local01 --targethost 172.16.20.42 \
---ssh-user root --ssh-password admini --datacenter Datacenter --template \
-centos7-template -N local01
+SDDC=local bundle exec knife vcenter vm clone local01 --targethost 172.16.20.3 \
+--ssh-user admini --ssh-password admini --datacenter Datacenter \
+--template ubuntu16-template -N local01
 SDDC=local bundle exec knife vcenter vm delete local01 -N local01 --purge -y
 ```
 
 The bash commands for spinning up a VM in your AWS SDDC.
 ```bash
-SDDC=aws bundle exec knife vcenter vm clone aws01 --folder TODO --ssh-user root \
+DDC=AWS knife vcenter vm clone aws01 --folder Workloads --ssh-user admini \
+--ssh-password admini --datacenter SDDC-Datacenter \
+--template Workloads\ubuntu16 -N aws01 --targethost esx-0.cdc-52-25-190-66.vmc.vmware.com \
 --ssh-password admini --datacenter TODO --template centos7-template -N aws01
 SDDC=aws bundle exec knife vcenter vm delete aws01 -N aws01 --purge -y
 ```
 
 ## kitchen
-
-Change to the remove `yml` for test-kitchen.
-```bash
-export KITCHEN_YAML=.kitchen.vcenter.yml
-```
 
 Use the default settings for the local SDDC.
 ```bash
@@ -46,8 +43,8 @@ kitchen verify
 
 Use ENV vars to override to go to the AWS SDDC.
 ```bash
-VCENTER_USER=TODO VCENTER_PASSWORD=TODO VCENTER_HOST=TODO AWS=TODO kitchen list
-VCENTER_USER=TODO VCENTER_PASSWORD=TODO VCENTER_HOST=TODO AWS=TODO kitchen verify
+kitchen list
+kitchen verify
 ```
 
 [knifecloud]: https://github.com/chef/knife-cloud

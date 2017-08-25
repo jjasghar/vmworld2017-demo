@@ -21,12 +21,12 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.1)
-      public_suffix (~> 2.0, >= 2.0.2)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     akami (1.3.1)
       gyoku (>= 0.4.0)
       nokogiri
-    artifactory (2.8.1)
+    artifactory (2.8.2)
     builder (3.2.3)
     chef (12.21.4)
       addressable
@@ -68,23 +68,24 @@ GEM
       mixlib-log (~> 1.3)
       rack (~> 2.0)
       uuidtools (~> 2.1)
+    coderay (1.1.1)
     diff-lcs (1.3)
     erubis (2.7.0)
     ffi (1.9.18)
-    ffi-yajl (2.3.0)
+    ffi-yajl (2.3.1)
       libyajl2 (~> 1.2)
     fuzzyurl (0.9.0)
     gssapi (1.2.0)
       ffi (>= 1.0.1)
     gyoku (1.3.1)
       builder (>= 2.1.2)
-    hashie (3.5.5)
+    hashie (3.5.6)
     highline (1.7.8)
     httpclient (2.8.3)
     httpi (2.4.2)
       rack
       socksify
-    iniparse (1.4.2)
+    iniparse (1.4.4)
     ipaddress (0.8.3)
     json (2.1.0)
     knife-cloud (1.2.1)
@@ -99,11 +100,11 @@ GEM
     logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
+    method_source (0.8.2)
     mini_portile2 (2.2.0)
     mixlib-archive (0.4.1)
       mixlib-log
-    mixlib-authentication (1.4.1)
-      mixlib-log
+    mixlib-authentication (1.4.2)
     mixlib-cli (1.7.0)
     mixlib-config (2.2.4)
     mixlib-install (2.1.12)
@@ -112,8 +113,8 @@ GEM
       mixlib-versioning
       thor
     mixlib-log (1.7.1)
-    mixlib-shellout (2.2.7)
-    mixlib-versioning (1.1.0)
+    mixlib-shellout (2.3.2)
+    mixlib-versioning (1.2.2)
     multi_json (1.12.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -143,10 +144,14 @@ GEM
       wmi-lite (~> 1.0)
     plist (3.3.0)
     proxifier (1.0.3)
-    public_suffix (2.0.5)
-    rack (2.0.2)
-    rb-readline (0.5.4)
-    rbvmomi (1.11.2)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    public_suffix (3.0.0)
+    rack (2.0.3)
+    rb-readline (0.5.5)
+    rbvmomi (1.11.3)
       builder (~> 3.0)
       json (>= 1.8)
       nokogiri (~> 1.5)
@@ -181,14 +186,15 @@ GEM
       nokogiri (>= 1.4.0)
       nori (~> 2.4)
       wasabi (~> 3.4)
-    serverspec (2.38.1)
+    serverspec (2.40.0)
       multi_json
       rspec (~> 3.0)
       rspec-its
-      specinfra (~> 2.53)
+      specinfra (~> 2.68)
     sfl (2.3)
+    slop (3.6.0)
     socksify (1.7.1)
-    specinfra (2.67.9)
+    specinfra (2.70.1)
       net-scp
       net-ssh (>= 2.7, < 5.0)
       net-telnet
@@ -238,6 +244,7 @@ PLATFORMS
 DEPENDENCIES
   kitchen-vcenter!
   knife-vcenter!
+  pry
 
 BUNDLED WITH
    1.14.6
