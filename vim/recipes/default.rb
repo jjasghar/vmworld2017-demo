@@ -7,8 +7,8 @@
 
 # run the correct linux bootstrap recipe
 case node['platform_family']
-when 'debian','ubuntu'
+when 'debian'
   package 'vim'
-when 'redhat', 'centos','fedora'
+when 'rhel'
   package 'vim-enhanced'
 end
